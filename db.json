@@ -1,0 +1,225 @@
+{
+  "members": [
+    {
+      "MemberID": "P101",
+      "Password": "abcdef",
+      "name": "Ravi",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "planning",
+      "id": "5014"
+    },
+    {
+      "MemberID": "P102",
+      "Password": "abcdef",
+      "name": "Suresh",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "planning",
+      "id": "4971"
+    },
+    {
+      "MemberID": "P103",
+      "Password": "abcdef",
+      "name": "Ramu",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "planning",
+      "id": "ebce"
+    },
+    {
+      "MemberID": "D101",
+      "Password": "abcdef",
+      "name": "Sampath",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "decoration",
+      "id": "cc34"
+    },
+    {
+      "MemberID": "D102",
+      "Password": "abcdef",
+      "name": "Sarika",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "decoration",
+      "id": "7694"
+    },
+    {
+      "MemberID": "D103",
+      "Password": "abcdef",
+      "name": "Sneha",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "decoration",
+      "id": "0683"
+    },
+    {
+      "MemberID": "M101",
+      "Password": "abcdef",
+      "name": "Balu",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "media",
+      "id": "1709"
+    },
+    {
+      "MemberID": "M102",
+      "Password": "abcdef",
+      "name": "Rajesh",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "media",
+      "id": "25b2"
+    },
+    {
+      "MemberID": "M103",
+      "Password": "abcdef",
+      "name": "Suraj",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "media",
+      "id": "a4d7"
+    },
+    {
+      "id": "dbec",
+      "MemberID": "P101",
+      "Password": "abcdef"
+    },
+    {
+      "MemberID": "P101",
+      "Password": "abcdef",
+      "id": "MckXqjy"
+    }
+  ],
+  "events": [
+    {
+      "username": "Rambabu",
+      "phoneNumber": 9390986746,
+      "Event": "Birthday Celebration",
+      "date": "2023-03-31",
+      "address": "Hyderabad",
+      "capacity": 120,
+      "id": "1"
+    },
+    {
+      "username": "Puppy",
+      "phoneNumber": 9390986746,
+      "Event": "Destination Marriage",
+      "date": "2023-03-31",
+      "address": "Kothapet",
+      "capacity": 210,
+      "id": "2"
+    },
+    {
+      "username": "naveen",
+      "phoneNumber": 9390986746,
+      "Event": "Birthday Celebration",
+      "date": "2023-03-07",
+      "address": "spl",
+      "capacity": 1000,
+      "id": "3"
+    },
+    {
+      "username": "nisritha35",
+      "phoneNumber": 9390986746,
+      "Event": "Birthday Celebration",
+      "date": "2023-04-13",
+      "address": "ncbxx",
+      "capacity": 123,
+      "id": "4"
+    },
+    {
+      "username": "Naveen",
+      "phoneNumber": 9392662041,
+      "Event": "Birthday Celebration",
+      "date": "2024-01-31",
+      "address": "Hyderabad",
+      "capacity": 250,
+      "id": "C6dH6ke"
+    }
+  ],
+  "localUser": [
+    {
+      "memberID": "M102",
+      "password": "abcdef",
+      "name": "Rajesh",
+      "email": "abcd@gmail.com",
+      "phoneNumber": 9874132565,
+      "committee": "media",
+      "id": "1"
+    }
+  ],
+  "messages": [
+    {
+      "name": "Rajesh",
+      "message": "hi iM rajesh",
+      "id": "1"
+    },
+    {
+      "name": "Rajesh",
+      "message": "hi",
+      "id": "2"
+    },
+    {
+      "name": "Rajesh",
+      "message": "hi",
+      "id": "3"
+    },
+    {
+      "message": "sada",
+      "name": "Rajesh",
+      "id": "4"
+    },
+    {
+      "message": "sada",
+      "name": "Rajesh",
+      "id": "5"
+    },
+    {
+      "message": "nisanjda",
+      "name": "Rajesh",
+      "id": "6"
+    },
+    {
+      "message": "hihidi",
+      "name": "Rajesh",
+      "id": "7"
+    },
+    {
+      "message": "jtgv",
+      "name": "Rajesh",
+      "id": "8"
+    },
+    {
+      "message": "jtgv",
+      "name": "Rajesh",
+      "id": "9"
+    },
+    {
+      "message": "asdafsfsadf",
+      "name": "Rajesh",
+      "id": "10"
+    },
+    {
+      "message": "asuhdjaf",
+      "name": "Balu",
+      "id": "11"
+    },
+    {
+      "message": "llll\n",
+      "name": "Rajesh",
+      "id": "12"
+    },
+    {
+      "message": "gcbv",
+      "name": "Rajesh",
+      "id": "13"
+    },
+    {
+      "message": "asdaf",
+      "name": "Rajesh",
+      "id": "14"
+    }
+  ]
+}
