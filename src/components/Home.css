@@ -1,2 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik+Puddles&display=swap');
 
+.fun1{
+    font-family: 'DM Serif Display', serif;
+}
+/* Add this CSS to your stylesheet */
+.card .sample {
+    transition: transform 0.2s ease; /* Add smooth transition */
+}
+
+.card .sample:hover {
+    transform: scale(1.1); /* Scale up the image on hover */
+    
+}
+.fun2{
+    border-bottom: 1.5px solid rgb(20, 19, 20); 
+}
+.hello
+{
+    width: 100px;
+}
+.img1{
+    margin-left: 150px;
+}
+.img2
+{
+margin-right: 150px;
+
+}
+.test2
+{
+margin-right: 16px;
+}
+.test3
+{
+    margin-left: 170px;
+}
+.img3{
+    margin-left: 150px;
+    
+}
+
+
+ 
   
+ .hello{
+      width: 140px;
+
+ }

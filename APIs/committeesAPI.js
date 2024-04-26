@@ -2,18 +2,52 @@ const { request, response } = require('express');
 const exp=require('express');
 const committeeApp = exp.Router();
 const verifyToken = require('./verifyToken')
+const jwt=require('jsonwebtoken')
+const bcryptjs=require('bcryptjs')
+const bodyparser=require('body-parser');
 
 const expressAsyncHandler=require('express-async-handler');
+committeeApp.use(bodyparser.json())
 
-committeeApp.get('/get-messages', expressAsyncHandler(async(request,response)=>{
+committeeApp.get('/get-member', expressAsyncHandler(async(request,response)=>{
     //response.send({message:"All users",payload:users})
 
     const committeeCollectionObj=request.app.get('committeeCollectionObj');
-    let messageList=await committeeCollectionObj.find().toArray();
+    let member=await committeeCollectionObj.find().toArray();
 
-    response.status(200).send({message:'Messages',payload:messageList});
+    response.status(200).send({message:'Messages',members:member});
 })
 );
+committeeApp.post('/member-login',expressAsyncHandler(async(request,response)=>{
+      const committeeCollectionObj=request.app.get('committeeCollectionObj');
+
+    const newuser=request.body;
+    //console.log(user)
+
+    let userObj=await committeeCollectionObj.findOne({id:newuser.id})
+
+    if(userObj===null){
+        response.status(200).send({message:"*Invalid Id"})
+    }
+    else{
+        let isEqual=await bcryptjs.compare(newuser.password,userObj.password);
+      if(isEqual==false)
+      {
+         response.send({message:"*Invalid password"});
+      }
+        else{
+            let jwtToken = jwt.sign({username:userObj.username},'abcdef',{expiresIn:'1d'})
+            console.log(userObj)
+            response.status(201).send({message:"success",id:userObj.id,token:jwtToken})
+        }
+    }
+}))
+
+committeeApp.post('/verify',verifyToken,async(req,res,next)=>{
+    res.send({message:"success"});
+})
+
+
 committeeApp.get('/get-message/:id',expressAsyncHandler(async(request,response)=>{
     let userId=+request.params.id
 
@@ -27,6 +61,32 @@ committeeApp.get('/get-message/:id',expressAsyncHandler(async(request,response)=
     // else response.send('User not Found')
 })
 );
+committeeApp.post('/add-member',expressAsyncHandler(async(request,response)=>{
+    // // response.send({message:"User Added"})
+    const newUser=request.body;
+    console.log(newUser);
+    const userCollectionObj = request.app.get("committeeCollectionObj");
+   let userOfDb =await userCollectionObj.findOne({id:newUser.id})
+     //console.log("fhsdfs");
+   try{
+   if(userOfDb!=null)
+   {
+      response.send({message:"*Member already existed"});
+   }
+   else{
+    // /  hash the password and store the document in the database
+      let hashedPassword=await bcryptjs.hash(newUser.password, 9);
+      console.log(hashedPassword);
+      newUser.password=hashedPassword;
+      await userCollectionObj.insertOne(newUser);
+      response.status(201).send({message:"Member created successfully"});
+   }
+   }
+   catch(err){
+      console.log(err);
+   }
+
+}))
 
 committeeApp.use(exp.json());
 

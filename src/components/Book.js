@@ -8,44 +8,45 @@ import './Book.css';
 
 function Book() {
   let { register, handleSubmit, formState: { errors } } = useForm();
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);  
 
   const handleClose = () => {
     setShow(false);
-    window.location.reload();
   }
+  const navigate = useNavigate();
   const handleShow = () => setShow(true);
-
-
   function submitForm(event) {
-
+    setShow(true);
     event.phoneNumber = +(event.phoneNumber);
     event.capacity = +(event.capacity);
-
-    axios.post('http://localhost:4000/events', event)
+    event.username=localStorage.getItem("username");
+    axios.post('http://localhost:3500/booking-api/new-booking', event)
       .then(res => {
-        setShow(true)
+        console.log(event);
+       
+       navigate('/')
       })
       .catch(err => console.log(err))
   }
+
+  const currentDate = new Date().toISOString().split('T')[0];
   return (
     <div className='container vh-100'>
       <div className='container form1 rounded mt-4 bg-opacity-75 p-3'>
-        <h1 className='text-center mb-4'>
+        <h1 className='text-center mb-4 fun1'>
           Booking Details
         </h1>
-        <div className='container'>
-          <form onSubmit={handleSubmit(submitForm)} className='d-flex flex-column w-25 mx-auto'>
+        <div className='container '>
+          <form onSubmit={handleSubmit(submitForm)} className='d-flex flex-column w-25 mx-auto '>
            <div className=''>
             <input
               type="text"
               className='form-control  mb-3 rounded p-2'
               placeholder="Enter your Name"
-              {...register('username', { required: true })}
-            />
-            {errors.username?.type == "required" && <p className='text-danger'>Username is required</p>}
+              {...register("Name", { required: true })}
+            />  
+            {errors.username?.type == "required" && <p className='text-danger'>*Username is required</p>}
             </div>
-
             <input
               type="text"
               className='form-control mb-3 rounded p-2'
@@ -75,14 +76,12 @@ function Book() {
                 <option value="CineAwards">
                   Cine Awards
                 </option>
-
-
               </select>
-
             </div>
-            <div className='date1 border border-dark rounded'>
+            <div className='date1  rounded'>
+              <label>Date Of event:</label>
               <input type="date" id="form3Example4" className="form-control"
-                placeholder="Choose Date"  {...register('date', { required: true })} />
+                placeholder="Choose Date" min={currentDate}  {...register('date', { required: true })} />
             </div>
             {errors.date?.type == 'required' && <p className='text-danger'>*Enter Date</p>}
             <div className='mt-3 '>
@@ -93,7 +92,6 @@ function Book() {
               ></textarea>
               {errors.username?.type === "required" && <p className='text-danger'>*Address is required</p>}
             </div>
-
             <div className='mt-2  '>
               <input
                 type="number"
@@ -107,7 +105,6 @@ function Book() {
             <div className="text-center text-lg-start mt-2 ">
               <Button className="btn btn-success" type='submit'>Submit</Button>
             </div>
-
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Slot Requested</Modal.Title>
@@ -117,15 +114,10 @@ function Book() {
                 <Button variant="primary" onClick={handleClose}>
                   Close
                 </Button>
-
               </Modal.Footer>
             </Modal>
-
-
           </form>
-
         </div>
-
       </div>
     </div>
   )

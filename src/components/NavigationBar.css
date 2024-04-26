@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik+Puddles&display=swap');
+nav{
+    font-family: 'DM Serif Display', serif;
+    
+}
+.nav-link.active {
+    color: white;
+
+    border-bottom: 3px solid rgb(33, 29, 29); /* Add underline effect */
+    /* transition:border-bottom  ease; */
+  }
+  /* .nav-link.active.sample1{
+    color: white;
+    border-bottom: 3px solid rgb(14, 13, 11);
+  } */
+
+
+  

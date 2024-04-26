@@ -1,16 +1,14 @@
 const { request, response } = require('express')
 const jwt = require('jsonwebtoken')
-
 const verifyToken = (request, response, next) =>{
-    const bearerToken = request.headers.authorization;  
-    console.log(bearerToken)
+    const bearerToken = request.body.token;  
+   // console.log(bearerToken)
     if(bearerToken == undefined){
         response.send({message:"UnAuthorized Access.. Plz Login"})
     }
     else{
-        const token = bearerToken.split(" ")[1]
         try{
-            jwt.verify(token, 'abcdef')
+            jwt.verify(bearerToken, 'abcdef')
             next()
         }
         catch(err){
@@ -18,5 +16,4 @@ const verifyToken = (request, response, next) =>{
         }
     }
 }
-
 module.exports = verifyToken;

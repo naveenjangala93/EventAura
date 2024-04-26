@@ -11,7 +11,7 @@ function Footer() {
                 Visit: 88/2, 2nd floor,besides Food Factory, Glorious Events.
               </p>
            </div>
-           <div class="c2" id="cn">
+           <div className="c2" id="cn">
             <h2>About Us:</h2>
             <p>
             Planing a event is a EVENT-TECH platform <br/>connecting users & event planners.

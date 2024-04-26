@@ -1,0 +1,18 @@
+###
+POST http://localhost:3500/admin-api/add-admin
+Content-Type: application/json
+
+{
+    "adminusername":"admin",
+    "password":"admin"
+}
+
+
+###
+POST http://localhost:3500/user-api/sendemail
+Content-Type: application/json
+
+{
+    "username": "nithish123",
+    "accepted": true
+}

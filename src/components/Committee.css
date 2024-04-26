@@ -1,4 +1,29 @@
-.w4{
+/* .w4{
     font-style:unset;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik+Puddles&display=swap');
+
+.fun1{
+    font-family: 'DM Serif Display', serif;
 }
+
+/* .sample {
+    transition: transform 0.2s ease; /* Add smooth transition */
+
+
+/* .sample :hover {
+    transform: scale(0.8); /* Scale up the image on hover */
+    
+ /* */ 
+ /* .test{
+    display: flex;
+    justify-content: space-between;
+
+ } */
+ .test2
+ {
+    margin-left: 210px;
+ }
+

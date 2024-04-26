@@ -5,6 +5,7 @@ import { FaLock } from "react-icons/fa6";
 import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Signup.css'
 //import './Signup.css'
 <FaUser />
 function Signup() {
@@ -41,8 +42,8 @@ function Signup() {
         <div className='container'>
          {err.length?<h5 color='red' className='text-center text-danger'>{err}</h5>:""}
             <div className='row  '>
-                <div className='col-sm-4 mx-auto  border     p-3 mb-5 ' >
-                    <h1 className='text-center'>Sign Up</h1>
+                <div className='col-sm-4 mx-auto  mt-3 rounded-4 test  mt-5 p-3 mb-5 ' >
+                    <h1 className='text-center fun1 mb-3'>Sign Up</h1>
                     <form onSubmit={handleSubmit(addNewUser)}>
                         <div className='input-group'>
                             <span className='input-group-text'><FaUser /></span>
@@ -102,3 +103,11 @@ function Signup() {
 }
 
 export default Signup
+
+
+
+
+
+
+
+

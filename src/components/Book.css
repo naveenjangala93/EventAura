@@ -5,6 +5,11 @@
     .date1{
         width:200px;
     }
-    .form1{
+    /* .form1{
         background-color:rgb(180, 212, 204);
-    }
+    } */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik+Puddles&display=swap');
+
+.fun1{
+    font-family: 'DM Serif Display', serif;
+}

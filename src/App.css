@@ -1,0 +1,14 @@
+  .page1{
+    background-image: url('https://img.freepik.com/free-vector/abstract-soft-colorful-watercolor-texture-background-design-vector_1055-12127.jpg');
+background-repeat: no-repeat;
+background-color: rgba(193, 247, 182, 0.11);
+min-height: 100vh;
+background-position: cover;
+height: max(100vh,auto); 
+background-size:cover; 
+
+ }
+ 
+
+/* //https://wallpapercave.com/wp/wp7488230.jpg */
+     

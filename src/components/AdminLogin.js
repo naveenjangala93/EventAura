@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap';
@@ -7,19 +8,18 @@ import './Login.css';
 import { LoginContext } from './LoginContext';
 import { useNavigate } from 'react-router-dom';
 
-
-function Login() {
+function AdminLogin() {
     const navigate = useNavigate();
     let { register, handleSubmit, formState: { errors } } = useForm();
     let [err,setErr]=useState("")
     function submitForm(memberObj) {
-           axios.post("http://localhost:3500/committee-api/member-login",memberObj)
+           axios.post("http://localhost:3500/admin-api/admin-login",memberObj)
            .then((res)=>{
             if (res.status == 201) {
                 localStorage.setItem("token", res.data.token)
-                 localStorage.setItem("id",res.data.adminusername)
+                 localStorage.setItem("adminusername",res.data.adminusername)
              setErr("");
-             navigate('/committee')
+             navigate('/adminpanel')
             }
          else if(res.status==200)
          {
@@ -29,30 +29,23 @@ function Login() {
            .catch((err)=>{console.log(err)})
     }
 
-    // useEffect(() => {
-    //     console.log(currentUserStatus)
-    //     console.log(loggedInUser)
-    //     if (currentUserStatus == true) {
-    //         navigate('/committee')
-    //     }
-    // }, [currentUserStatus])
-    return (
+  return (
+    <div className='container  '>
 
-        <div className='login1'>
-           
-            <div className="container mt-5 d-flex align-items-center ">
+
+<div className='login1'>
+            {/* <h1 className='text-center mt-5 mb-3 w3 text-bold fun'>Glorious Event Planners and Designers!!</h1> */}
+            <div className="container mt-5 d-flex align-items-center  ">
                 <div className="row d-flex justify-content-around w-100 mt-5">
-
-
-                    <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border p-4 mb-5 mx-auto justify-content-center align-center test">
+                    <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border p-4 mb-5 mx-auto justify-content-center align-center test ">
                         {(err.length != 0) && <p className='lead text-danger text-center fs-3'>{err}</p>}
-                        <h1 className='text-center mt-5 mb-3 w3 text-bold fun'>Member Login</h1>
+                        <h2 className='text-center fun'>Admin Login</h2>
                         <form onSubmit={handleSubmit(submitForm)} className='mt-5'>
                             {/* {err.length != 0 && <p className='text-danger'>*Invalid ID or Password</p>} */}
                             <div className="form-outline mb-4 mt-4">
                                 <input type="text" id="form3Example3" className="form-control form-control-lg"
-                                    placeholder="Enter Member ID" {...register('id', { required: true })} />
-                                {errors.id?.type == 'required' && <p className='text-danger'>*Member ID is required</p>}
+                                    placeholder="Enter admin username" {...register('adminusername', { required: true })} />
+                                {errors.adminusername?.type == 'required' && <p className='text-danger'>*Member ID is required</p>}
                             </div>
 
 
@@ -81,7 +74,10 @@ function Login() {
             </div>
 
         </div>
-    )
+
+
+    </div>
+  )
 }
 
-export default Login
+export default AdminLogin
